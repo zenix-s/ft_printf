@@ -1,26 +1,32 @@
 #include "../include/ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+int ft_printf(const char *format, ...)
 {
-	int	i;
+	int print_count;
 	va_list ap;
-	char *str;
+	int i;
 
-	va_start(ap, format);
 	i = 0;
+	print_count = 0;
+	va_start(ap, format);
 	while (format[i])
 	{
 		if (format[i] == '%')
 		{
-			switch_type(format[i + 1], ap, &str);
-			i = i + 2;
+			i++;
+			print_count += print_dispatcher(format[i], ap);
 		}
 		else
 		{
-			write(0, &format[i], 1);
-			i++;
+			write(1, &format[i], 1);
+			print_count++;
 		}
+		i++;
 	}
 	va_end(ap);
-	return (1);
+	return (print_count);
+	
 }
+
+
+
