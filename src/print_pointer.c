@@ -1,34 +1,36 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_pointer.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: serferna <serferna@student.42madrid.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/15 16:23:32 by serferna          #+#    #+#             */
+/*   Updated: 2024/05/15 20:44:28 by serferna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/ft_printf.h"
 
-int print_pointer(void *p)
+int	print_pointer(unsigned long long p)
 {
-    int count = 0;
+	int						count;
+	unsigned long long int	ptr_value;
+	char					hex_value[17];
+	int						i;
 
-    // Write "0x" to indicate hexadecimal representation
-    write(1, "0x", 2);
-    count += 2;
-
-    // Cast the pointer to unsigned long long
-    unsigned long long int ptr_value = (unsigned long long int)p;
-
-    // Temporary array to store hexadecimal digits
-    char hex_digits[] = "0123456789abcdef";
-
-    // Array to store hexadecimal representation of the pointer
-    char hex_representation[17]; // 16 bytes for the maximum length of 64-bit pointer + 1 for null terminator
-
-    // Convert the pointer to hexadecimal representation
-    int i = 0;
-    while (ptr_value != 0) {
-        hex_representation[i++] = hex_digits[ptr_value % 16];
-        ptr_value /= 16;
-    }
-
-    // Write the hexadecimal representation in reverse order
-    while (i > 0) {
-        write(1, &hex_representation[--i], 1);
-        count++;
-    }
-
-    return count;
+	count = 0;
+	i = 0;
+	if (p == 0)
+		return (print_string("(nil)"));
+	count += print_string("0x");
+	ptr_value = (unsigned long long int)p;
+	while (ptr_value != 0)
+	{
+		hex_value[i++] = HEX_LOW_BASE[ptr_value % 16];
+		ptr_value /= 16;
+	}
+	while (i > 0)
+		count += print_char(hex_value[--i]);
+	return (count);
 }

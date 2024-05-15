@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_percent.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: serferna <serferna@student.42madrid.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/15 16:23:29 by serferna          #+#    #+#             */
+/*   Updated: 2024/05/15 20:24:44 by serferna         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/ft_printf.h"
 
-int print_percent()
+int	print_percent(void)
 {
-  write(1, "%", 1);
-  return (1);
+	return (print_char('%'));
 }
