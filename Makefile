@@ -16,6 +16,9 @@ INCLUDES = include
 
 OBJS = $(SRC:.c=.o)
 
+# COLORS
+
+
 $(OBJS): %.o: %.c
 	@echo "Compiling $<"
 	@$(CC) $(CFLAGS) -c $< -o $@
