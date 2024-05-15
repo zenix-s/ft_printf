@@ -16,20 +16,13 @@ INCLUDES = include
 
 OBJS = $(SRC:.c=.o)
 
-# COLORS
-RED = \033[0;31m
-GREEN = \033[0;32m
-BLUR = \033[0;34m
-
-RESET = \033[0m
-
 $(OBJS): %.o: %.c
 	@echo "Compiling $<"
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
 	@$(AR) $(NAME) $(OBJS)
-	@echo "$(BLUE)libftprintf.a created$(RESET)"
+	@echo "libftprintf.a created"
 
 all: $(NAME)
 
