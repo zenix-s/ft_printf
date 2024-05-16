@@ -6,7 +6,7 @@
 /*   By: serferna <serferna@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 16:23:11 by serferna          #+#    #+#             */
-/*   Updated: 2024/05/16 12:04:30 by serferna         ###   ########.fr       */
+/*   Updated: 2024/05/16 17:17:16 by serferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,5 @@
  */
 int	print_char(char c)
 {
-	write(1, &c, 1);
-	return (1);
+	return (write(1, &c, 1));
 }
