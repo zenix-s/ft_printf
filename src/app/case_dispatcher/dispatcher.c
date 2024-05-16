@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_dispatcher.c                                 :+:      :+:    :+:   */
+/*   dispatcher.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: serferna <serferna@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 16:23:16 by serferna          #+#    #+#             */
-/*   Updated: 2024/05/15 16:23:47 by serferna         ###   ########.fr       */
+/*   Updated: 2024/05/16 17:04:02 by serferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "../../ft_printf.h"
 
 int	print_dispatcher(char c, va_list ap)
 {

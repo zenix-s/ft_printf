@@ -1,9 +1,12 @@
 # DIRECTORIES
 
-SRCP = ./src/
+SRCP = ./src/app/
+SRCPRINTERS = ./src/app/printer/
 SRCS = $(notdir $(wildcard $(SRCP)*.c))
+SRCSPRINTERS = $(notdir $(wildcard $(SRCPRINTERS)*.c))
 
 SRC = $(addprefix $(SRCP), $(SRCS))
+SRC += $(addprefix $(SRCPRINTERS), $(SRCSPRINTERS))
 
 # VARIABLES 
 
