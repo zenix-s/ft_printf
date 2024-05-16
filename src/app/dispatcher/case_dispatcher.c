@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   dispatcher.c                                       :+:      :+:    :+:   */
+/*   case_dispatcher.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: serferna <serferna@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 16:23:16 by serferna          #+#    #+#             */
-/*   Updated: 2024/05/16 19:28:19 by serferna         ###   ########.fr       */
+/*   Updated: 2024/05/16 19:42:23 by serferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../ft_printf.h"
 
-int	case_dispathcer(char c, va_list ap)
+int	case_dispatcher(char c, va_list ap)
 {
 	if (c == 'd' || c == 'i')
 		return (print_int(va_arg(ap, int)));
