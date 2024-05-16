@@ -6,7 +6,7 @@
 /*   By: serferna <serferna@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 16:23:05 by serferna          #+#    #+#             */
-/*   Updated: 2024/05/16 12:06:43 by serferna         ###   ########.fr       */
+/*   Updated: 2024/05/16 19:28:32 by serferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 int	ft_printf(const char *format, ...)
 {
-	int		print_count;
+	int		characters_printed;
 	va_list	ap;
 	int		i;
 
 	i = 0;
-	print_count = 0;
+	characters_printed = 0;
 	va_start(ap, format);
 	while (format[i])
 	{
 		if (format[i] == '%')
 		{
 			i++;
-			print_count += print_dispatcher(format[i], ap);
+			characters_printed += case_dispatcher(format[i], ap);
 		}
 		else
-			print_count += print_char(format[i]);
+			characters_printed += print_char(format[i]);
 		i++;
 	}
 	va_end(ap);
-	return (print_count);
+	return (characters_printed);
 }

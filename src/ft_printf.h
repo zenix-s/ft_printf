@@ -6,7 +6,7 @@
 /*   By: serferna <serferna@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 16:24:16 by serferna          #+#    #+#             */
-/*   Updated: 2024/05/16 17:05:00 by serferna         ###   ########.fr       */
+/*   Updated: 2024/05/16 19:28:19 by serferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 
 int	ft_printf(const char *format, ...);
 
-int	print_dispatcher(char c, va_list ap);
+int	case_dispatcher(char c, va_list ap);
 
 int	print_percent(void);
 

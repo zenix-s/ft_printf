@@ -6,23 +6,23 @@
 /*   By: serferna <serferna@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 16:23:36 by serferna          #+#    #+#             */
-/*   Updated: 2024/05/16 12:06:56 by serferna         ###   ########.fr       */
+/*   Updated: 2024/05/16 19:28:19 by serferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../ft_printf.h"
 
-int	print_string(char *s)
+int	print_string(char *string)
 {
-	int	count;
+	int	characters_printed;
 	int	len;
 
 	len = 0;
-	count = 0;
-	if (!s)
+	characters_printed = 0;
+	if (!string)
 		return (print_string("(null)"));
-	while (s[len])
+	while (string[len])
 		len++;
-	count += write(1, s, len);
-	return (count);
+	characters_printed += write(1, string, len);
+	return (characters_printed);
 }

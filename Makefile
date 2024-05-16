@@ -2,7 +2,7 @@
 
 SRCP = ./src/app/
 SRCPRINTERS = ./src/app/printer/
-SRCPDISPATCHER = ./src/app/case_dispatcher/
+SRCPDISPATCHER = ./src/app/dispatcher/
 
 SRCS = $(notdir $(wildcard $(SRCP)*.c))
 SRCSPRINTERS = $(notdir $(wildcard $(SRCPRINTERS)*.c))
