@@ -2,11 +2,15 @@
 
 SRCP = ./src/app/
 SRCPRINTERS = ./src/app/printer/
+SRCPDISPATCHER = ./src/app/case_dispatcher/
+
 SRCS = $(notdir $(wildcard $(SRCP)*.c))
 SRCSPRINTERS = $(notdir $(wildcard $(SRCPRINTERS)*.c))
+SRCSDISPATCHER = $(notdir $(wildcard $(SRCPDISPATCHER)*.c))
 
 SRC = $(addprefix $(SRCP), $(SRCS))
 SRC += $(addprefix $(SRCPRINTERS), $(SRCSPRINTERS))
+SRC += $(addprefix $(SRCPDISPATCHER), $(SRCSDISPATCHER))
 
 # VARIABLES 
 
@@ -15,8 +19,6 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar rcs
 RM = rm -f
-INCLUDES = include
-
 OBJS = $(SRC:.c=.o)
 
 $(OBJS): %.o: %.c
