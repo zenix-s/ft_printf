@@ -6,7 +6,7 @@
 /*   By: serferna <serferna@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 16:23:32 by serferna          #+#    #+#             */
-/*   Updated: 2024/05/16 23:20:59 by serferna         ###   ########.fr       */
+/*   Updated: 2024/05/19 00:17:35 by serferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int	print_pointer(unsigned long long pointer)
 	characters_printed += print_string("0x");
 	while (pointer != 0)
 	{
-		i++;
 		hex_value[i] = HEX_LOW_BASE[pointer % 16];
 		pointer /= 16;
+		i++;
 	}
 	while (i > 0)
 	{
