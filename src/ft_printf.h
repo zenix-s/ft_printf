@@ -6,7 +6,7 @@
 /*   By: serferna <serferna@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 16:24:16 by serferna          #+#    #+#             */
-/*   Updated: 2024/05/16 19:28:19 by serferna         ###   ########.fr       */
+/*   Updated: 2024/05/19 00:07:22 by serferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
 // libft
 //# include "../lib/libft/libft.h"
 
-# define INT_MIN -2147483648
-# define UINT_MAX 4294967295
 
 # define MODIFIERS "cspdiuxX%"
 
