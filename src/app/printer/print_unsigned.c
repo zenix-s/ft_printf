@@ -12,6 +12,9 @@
 
 #include "../../ft_printf.h"
 
+/**
+* @brief Print an unsigned number
+*/
 int	print_unsigned(unsigned int number)
 {
 	int	characters_printed;

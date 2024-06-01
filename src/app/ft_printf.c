@@ -6,7 +6,7 @@
 /*   By: serferna <serferna@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 16:23:05 by serferna          #+#    #+#             */
-/*   Updated: 2024/05/19 00:10:34 by serferna         ###   ########.fr       */
+/*   Updated: 2024/05/20 20:52:28 by serferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			characters_printed += case_dispatcher(format[i], ap);
+			characters_printed += case_dispatcher(&format, ap, &i);
 		}
 		else
 			characters_printed += print_char(format[i]);
