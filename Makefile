@@ -21,6 +21,9 @@ AR = ar rcs
 RM = rm -f
 OBJS = $(SRC:.c=.o)
 
+# COLORS
+
+
 $(OBJS): %.o: %.c
 	@echo "Compiling $<"
 	@$(CC) $(CFLAGS) -c $< -o $@
