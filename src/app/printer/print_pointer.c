@@ -6,31 +6,33 @@
 /*   By: serferna <serferna@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 16:23:32 by serferna          #+#    #+#             */
-/*   Updated: 2024/05/15 20:44:28 by serferna         ###   ########.fr       */
+/*   Updated: 2024/05/19 00:17:35 by serferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "../../ft_printf.h"
 
-int	print_pointer(unsigned long long p)
+int	print_pointer(unsigned long long pointer)
 {
-	int						count;
-	unsigned long long int	ptr_value;
-	char					hex_value[17];
-	int						i;
+	int		characters_printed;
+	char	hex_value[17];
+	int		i;
 
-	count = 0;
+	characters_printed = 0;
 	i = 0;
-	if (p == 0)
+	if (pointer == 0)
 		return (print_string("(nil)"));
-	count += print_string("0x");
-	ptr_value = (unsigned long long int)p;
-	while (ptr_value != 0)
+	characters_printed += print_string("0x");
+	while (pointer != 0)
 	{
-		hex_value[i++] = HEX_LOW_BASE[ptr_value % 16];
-		ptr_value /= 16;
+		hex_value[i] = HEX_LOW_BASE[pointer % 16];
+		pointer /= 16;
+		i++;
 	}
 	while (i > 0)
-		count += print_char(hex_value[--i]);
-	return (count);
+	{
+		i--;
+		characters_printed += print_char(hex_value[i]);
+	}
+	return (characters_printed);
 }

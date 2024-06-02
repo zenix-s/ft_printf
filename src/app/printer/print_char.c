@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_percent.c                                    :+:      :+:    :+:   */
+/*   print_char.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: serferna <serferna@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/15 16:23:29 by serferna          #+#    #+#             */
-/*   Updated: 2024/05/15 20:24:44 by serferna         ###   ########.fr       */
+/*   Created: 2024/05/15 16:23:11 by serferna          #+#    #+#             */
+/*   Updated: 2024/05/16 19:24:02 by serferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "../../ft_printf.h"
 
-int	print_percent(void)
+/**
+ * print_char - Print a character
+ * @param c: character to print
+ * @return: number of characters printed
+ */
+int	print_char(char character)
 {
-	return (print_char('%'));
+	return (write(1, &character, 1));
 }

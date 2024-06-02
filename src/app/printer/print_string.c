@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   print_string.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: serferna <serferna@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/15 16:23:05 by serferna          #+#    #+#             */
-/*   Updated: 2024/05/15 16:23:47 by serferna         ###   ########.fr       */
+/*   Created: 2024/05/15 16:23:36 by serferna          #+#    #+#             */
+/*   Updated: 2024/05/16 19:28:19 by serferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "../../ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+int	print_string(char *string)
 {
-	int		print_count;
-	va_list	ap;
-	int		i;
+	int	characters_printed;
+	int	len;
 
-	i = 0;
-	print_count = 0;
-	va_start(ap, format);
-	while (format[i])
-	{
-		if (format[i] == '%')
-		{
-			i++;
-			print_count += print_dispatcher(format[i], ap);
-		}
-		else
-		{
-			write(1, &format[i], 1);
-			print_count++;
-		}
-		i++;
-	}
-	va_end(ap);
-	return (print_count);
+	len = 0;
+	characters_printed = 0;
+	if (!string)
+		return (print_string("(null)"));
+	while (string[len])
+		len++;
+	characters_printed += write(1, string, len);
+	return (characters_printed);
 }

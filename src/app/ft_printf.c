@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_int.c                                        :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: serferna <serferna@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/15 16:23:26 by serferna          #+#    #+#             */
-/*   Updated: 2024/05/15 22:19:53 by serferna         ###   ########.fr       */
+/*   Created: 2024/05/15 16:23:05 by serferna          #+#    #+#             */
+/*   Updated: 2024/05/20 20:52:28 by serferna         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "../ft_printf.h"
 
-int	print_int(int nbr)
+int	ft_printf(const char *format, ...)
 {
-	int	count;
+	int		characters_printed;
+	va_list	ap;
+	int		i;
 
-	count = 0;
-	if (nbr < 0)
+	i = 0;
+	characters_printed = 0;
+	va_start(ap, format);
+	while (format[i])
 	{
-		count += print_char('-');
-		if (-(nbr / 10) > 0)
-			count += print_int(-(nbr / 10));
-		nbr = -(nbr % 10);
+		if (format[i] == '%')
+		{
+			i++;
+			characters_printed += case_dispatcher(&format, ap, &i);
+		}
+		else
+			characters_printed += print_char(format[i]);
+		i++;
 	}
-	if (nbr >= 10)
-	{
-		count += print_int(nbr / 10);
-		count += print_char(DEC_BASE[nbr % 10]);
-	}
-	else
-		count += print_char(DEC_BASE[nbr]);
-	return (count);
+	va_end(ap);
+	return (characters_printed);
 }
