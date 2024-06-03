@@ -12,16 +12,17 @@
 
 #include "../../ft_printf.h"
 
-int print_string(char *string) {
-  int characters_printed;
-  int len;
+int	print_string(char *string)
+{
+	int	characters_printed;
+	int	len;
 
-  len = 0;
-  characters_printed = 0;
-  if (!string)
-    return (print_string("(null)"));
-  while (string[len])
-    len++;
-  characters_printed += write(1, string, len);
-  return (characters_printed);
+	len = 0;
+	characters_printed = 0;
+	if (!string)
+		return (print_string("(null)"));
+	while (string[len])
+		len++;
+	characters_printed += write(1, string, len);
+	return (characters_printed);
 }
