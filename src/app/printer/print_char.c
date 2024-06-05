@@ -12,11 +12,6 @@
 
 #include "../../ft_printf.h"
 
-/**
- * print_char - Print a character
- * @param c: character to print
- * @return: number of characters printed
- */
 int	print_char(char character)
 {
 	return (write(1, &character, 1));

@@ -36,6 +36,6 @@ int	print_char(char c);
 
 int	print_int_base(int number, int base, char *base_str);
 
-int	print_uint_base(unsigned int number, int base, char *base_str);
+int	print_uint_base(unsigned int number, unsigned int base, char *base_str);
 
 #endif

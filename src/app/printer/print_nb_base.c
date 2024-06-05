@@ -35,12 +35,12 @@ int	print_int_base(int number, int base, char *base_str)
 	return (characters_printed);
 }
 
-int	print_uint_base(unsigned int number, int base, char *base_str)
+int	print_uint_base(unsigned int number, unsigned int base, char *base_str)
 {
 	int	characters_printed;
 
 	characters_printed = 0;
-	if (number >= (unsigned int)base)
+	if (number >= base)
 	{
 		characters_printed += print_uint_base(number / base, base, base_str);
 		characters_printed += print_char(base_str[number % base]);
